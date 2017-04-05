@@ -3,7 +3,7 @@
 
   <groupId>org.orangetesla.spring</groupId>
   <artifactId>Fileupload</artifactId>
-  <version>1.4</version>
+  <version>1.5-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>Fileupload</name>
@@ -12,7 +12,7 @@
   <scm>
     <connection>scm:git:https://github.com/kasarlajayapal/Fileupload.git</connection>
     <developerConnection>scm:git:https://github.com/kasarlajayapal/Fileupload.git</developerConnection>
-    <tag>Fileupload-1.4</tag>
+    <tag>HEAD</tag>
     <url>https://github.com/kasarlajayapal/Fileupload.git</url>
   </scm>
 
