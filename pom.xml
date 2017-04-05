@@ -4,7 +4,7 @@
   <groupId>org.orangetesla.spring</groupId>
   <artifactId>Fileupload</artifactId>
   <version>1.5-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
   <name>Fileupload</name>
   <url>http://maven.apache.org</url>
