@@ -50,6 +50,16 @@
     <findbugs-maven-plugin.version>3.0.3</findbugs-maven-plugin.version>
     <maven-release-plugin.version>2.5.1</maven-release-plugin.version>
     <maven-scm-provider-gitexe.version>1.9.2</maven-scm-provider-gitexe.version>
+    <jacoco-maven-plugin.version>0.7.7.201606060606</jacoco-maven-plugin.version>
+    <sonar.plugin.version>3.2</sonar.plugin.version>
+		<sonar.host.url>http://localhost:9000</sonar.host.url>
+    <sonar.exclusions>
+			**/generated-sources/**
+		 <!--**/*Test.java-->
+		</sonar.exclusions>
+		<sonar.test.exclusions>
+				**/**
+		</sonar.test.exclusions>
   </properties>
 
   <dependencies>
@@ -137,6 +147,35 @@
                     </checkModificationExcludes>
                 </configuration>
             </plugin>
+          	<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco-maven-plugin.version}</version>
+				<configuration>
+					<destFile>${sonar.jacoco.reportPath}</destFile>
+					<append>true</append>
+				</configuration>
+				<executions>
+					<execution>
+						<id>jacoco-initialize</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>jacoco-site</id>
+						<phase>package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>${sonar.plugin.version}</version>
+			</plugin>
         </plugins>
     </build>
 </project>
